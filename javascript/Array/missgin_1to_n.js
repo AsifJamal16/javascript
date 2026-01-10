@@ -1,34 +1,31 @@
-//count even odd numbers 
+//find the missing number from 1 to n 
 const { stdin, stdout } = require('process');
 const readline=require('readline');
 const rl=readline.createInterface({
     input:stdin,
     output:stdout,
-})
+}) 
 let arr=[];
 rl.question('enter size:',function(num){
+    num=Number(num);
     rl.question('enter elements:',function(input){
         arr=input.split(' ').map(Number);
-        evenodd(arr);
+        console.log(missingNumer(arr));
         rl.close();
     })
 })
-function evenodd(arr){
-    let odd=0;
-    let even=0;
+function arrSum(arr){
+    let sum=0;
     for(let i=0;i<arr.length;i++){
-        if(arr[i]%2!=0){
-            odd++;
-        }
-        else{
-            even++;
-        }
+        sum=sum+arr[i];
     }
-    console.log('odd count:',odd);
-    console.log('even count:',even);
-    return ;
+    return sum;
 }
-
-
-
+function missingNumer(arr){
+    let n=arr.length+1;
+    let totalSum=parseInt(n*(n+1))/2;
+    let arraySum=arrSum(arr);
+    let diff=totalSum-arraySum;
+    return diff;
+}
 
