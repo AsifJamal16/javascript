@@ -1,0 +1,61 @@
+<!--character counter-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #555;
+        }
+        .div1{
+            height: 400px;
+            width: 400px;
+            background-color: antiquewhite;
+            margin:  auto;
+            margin-top: 200px;
+            border-radius: 12px;
+        }
+        #textplace{
+            max-width: 390px;
+            width: 390px;
+            min-width: 390px;
+            margin-left: 3px;
+            font-size: 18px;
+            background-color: antiquewhite;
+            border: 1px solid #555;
+            border-radius: 12px;
+            max-height: 300px;
+        }
+        input{
+            padding-left: 6px;
+        }
+        h1{
+            font-size: 35px;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        .counter{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <textarea name="" id="textplace" cols="30" rows="10" placeholder="enter message"></textarea>
+        <h1>Total character: <span class="counter"></span> </h1>
+    </div>
+    
+    <script>
+        let textinput=document.querySelector('#textplace');
+        let count=0;
+        let spanclass=document.querySelector('.counter');
+        textinput.addEventListener('input',function(){
+            count=textinput.value.replaceAll(' ','').length;
+            spanclass.textContent=`${count}`;
+        })
+    </script>
+</body>
+</html>
