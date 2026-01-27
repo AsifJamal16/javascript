@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333;
+        }
+        .notification{
+            display: none;
+            height: 40px;
+            width: 250px;
+            background-color: #555;
+            text-align: right;
+            border-radius: 10px;
+            position: fixed;
+            right: 10px;
+            top: 10px;
+        }
+        h4{
+            background-color: #555;
+            color: white;
+            text-align: center;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification">
+        <h4>this is your toaster notification</h4>
+    </div>
+    <script>
+        let notificationbar=document.querySelector('.notification');
+        setTimeout(function(){
+            notificationbar.style.display='flex';
+        },1000)
+        setTimeout(function(){
+            notificationbar.style.display='none';
+        },5000);
+    </script>
+</body>
+</html>
