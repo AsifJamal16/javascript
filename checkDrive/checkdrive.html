@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333;
+        }
+        .cont{
+            height: 400px;
+            width: 500px;
+            margin: 200px auto;
+            background-color: #555;
+            border: 1px solid gray;
+            border-radius: 12px;
+        }
+        .inputAndButton{
+            display: flex;
+            background-color: #555;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        input{
+            height: 40px;
+            width: 250px;
+            background-color: rgb(231, 232, 232);
+            border-radius: 12px;
+            padding-left: 5px;
+            font-size: 16px;
+        }
+        button{
+            height: 40px;
+            width: 140px;
+            border: none;
+            border-radius: 8px;
+            font-size: 21px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: blue;
+        }
+        button:active{
+            width: 160px;
+            background-color: white;
+            color: black;
+        }
+        h2{
+            margin-top: 100px;
+            text-align: center;
+            background-color: #555;
+            color: white;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="inputAndButton">
+            <input type="number" placeholder="Enter your age" class="inputbox">
+            <button class="btn">check</button>
+        </div>
+        <h2></h2>
+    </div>
+    
+    <script>
+        let inputBox=document.querySelector('.inputbox');
+        let checkbutton=document.querySelector('.btn');
+        let h2=document.querySelector('h2');
+        checkbutton.addEventListener('click',function(){
+            let val=inputBox.value;
+            if(val.trim()===''){
+                alert('please enter your age')
+            }
+            else if(val>18){
+                h2.textContent='You can Drive';
+                
+            }
+            else{
+                h2.textContent='You can not Drive';
+                    
+            }
+        })
+    </script>
+</body>
+</html>
